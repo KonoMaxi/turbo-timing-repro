@@ -1,8 +1,9 @@
 <turbo-frame id="step-one">
   <div class="flex appear-animation">
-    <div class="border-box flex-grow">
+    <div class="flex-grow">
       <p>This form submits via turbo and uses <b>data-turbo-frame="secondForm"</b></p>
-      <%= form_with url: stepper_two_path, html: { "data-turbo-frame" => "step-two", "data-stepper-target" => "firstFormTurbo", "data-action" => "turbo:submit-end->stepper#oneTurboSubmitted ajax:success->stepper#oneTurboSuccess" } do |f| %>
+      <span class="form-caption">firstFormTurbo</span>
+      <%= form_with url: stepper_two_path, html: { class: "form-frame", "data-turbo-frame" => "step-two", "data-stepper-target" => "firstFormTurbo", "data-action" => "turbo:submit-end->stepper#oneTurboSubmitted ajax:success->stepper#oneTurboSuccess" } do |f| %>
         <%= f.text_field :one, value: "turbo" %>
         <%= f.submit "submit turbo", "data-action" => "turbo:submit-end->stepper#oneTurbo" %>
       <% end %>
@@ -10,9 +11,10 @@
       <p class="border-box warn hidden" data-stepper-target="turboWarning"><b>oneTurboSubmitted</b> submitted secondForm before it was replaced!<br/> Very inconvenient and unexpected behaviour<p>
     </div>
 
-    <div class="border-box flex-grow">
+    <div class="flex-grow">
       <p>This form submits with <b>local: false</b> and <b>data-turbo-frame="_top"</b></p>
-      <%= form_with url: stepper_two_path, local: false, html: { "data-turbo-frame" => "_top", "data-stepper-target" => "firstFormAjax", "data-action" => "ajax:success->stepper#oneAjaxSuccess turbo:submit-end->stepper#oneAjaxSubmitted" } do |f| %>
+      <span class="form-caption">firstFormAjax</span>
+      <%= form_with url: stepper_two_path, local: false, html: { class: "form-frame", "data-turbo-frame" => "_top", "data-stepper-target" => "firstFormAjax", "data-action" => "ajax:success->stepper#oneAjaxSuccess turbo:submit-end->stepper#oneAjaxSubmitted" } do |f| %>
         <%= f.text_field :one, value: "ajax" %>
         <%= f.submit "submit ajax" %>
       <% end %>

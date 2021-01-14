@@ -23,6 +23,31 @@
 .flex-grow {
   flex-grow: 1
 }
+.form-caption {
+  color: white;
+  background-color: lightsalmon;
+}
+.form-frame {
+  border: 3px solid lightsalmon;
+  padding: 15px
+}
+.turboframe-caption {
+  color: white;
+  background-color: darkmagenta;
+}
+turbo-frame {
+  display: block;
+  border: 3px solid darkmagenta;
+}
+
+.controller-caption {
+  color: white;
+  background-color: green;
+}
+.controller-frame {
+  border: 3px solid green;
+}
+
 .border-box {
   border: 1px solid black;
   margin: 20px;

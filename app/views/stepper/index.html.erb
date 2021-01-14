@@ -1,21 +1,45 @@
-<div data-controller="stepper">
+<span class="controller-caption">stimulusJS controller "stepper"</span>
+<div data-controller="stepper" class="controller-frame">
   <h1>Turbo Timing Demo</h1>
-  <p>Turbo's Timing seems to be a bit counter intuitive. I tried to build a stepper using the new turbo-frames (in a way i deemed correct/smart)</p>
-  <button data-action="stepper#submitTurboForm">trigger Turbo form via Rails.fire()</button>
-  <button data-action="stepper#submitAjaxForm">trigger Ajax form via Rails.fire()</button>
+  <div class="flex">
+    <div style="margin: 0 30px 0 30px">
+      <p>Turbo's Timing seems to be a bit counter intuitive. I tried to build a stepper using the new turbo-frames (in a way i deemed correct/smart)</p>
+      <span>Steps to reproduce - important is what happens (or what doesn't happen) to the output in step 3</span>
+      <ol>
+        <li>submit ajax form</li>
+        <li>submit turbo form</li>
+        <li>step 3 shows ajax output</li>
+      </ol>
+      <span>- or -</span>
+      <ol>
+        <li>submit turbo form</li>
+        <li>submit turbo form</li>
+        <li>step 3 is only filled on second submit</li>
+      </ol>
+    </div>
+    <div class="border-box">
+      <p>click these buttons for programmatic submit</p>
+      <button data-action="stepper#submitTurboForm">trigger Turbo form via Rails.fire()</button>
+      <button data-action="stepper#submitAjaxForm">trigger Ajax form via Rails.fire()</button>
+    </div>
+  </div>
 
   <h2>Step 1</h2>
+  <span class="turboframe-caption">turbo-frame step-one</span>
   <turbo-frame id="step-one" src="<%= stepper_one_path %>"></turbo-frame>
 
   <h2>Step 2</h2>
-  <p>form two is just a few radio-buttons and should submit automatically</p>
+  <p>Form two is just a few radio-buttons and should submit automatically</p>
+  <p>It has a stimulus controller attached, which dispatcher a <b>connected</b> event. Somehow the surrounding <b>stepperController</b> will never receive it.</p>
+  <span class="turboframe-caption">turbo-frame step-two</span>
   <turbo-frame id="step-two"></turbo-frame>
 
   <h2>Step 3 - The result</h2>
+  <span class="turboframe-caption">turbo-frame step-three</span>
   <turbo-frame id="step-three"></turbo-frame>
 
-  <hr>
-  <h2>Other remarks</h2>
-  <p data-controller="convention-broken">Somehow the naming conventions are broken when using without webpack</p>
-  <p data-controller="step-two">If I don't use the "step-two" controller in the index page it somehow won't connect in the ajaxed(/turboed) frames</p>
 </div>
+<hr>
+<h2>Other remarks</h2>
+<p data-controller="convention-broken">Somehow the naming conventions are broken when using without webpack</p>
+<p data-controller="step-two">If I don't use the "step-two" controller in the index page it somehow won't connect in the ajaxed(/turboed) frames</p>

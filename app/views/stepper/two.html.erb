@@ -1,7 +1,9 @@
 <turbo-frame id="step-two">
-  <div class="border-box appear-animation" data-controller="step-two" data-action="connected->stepper#twoConnected connected:delayed->stepper#twoConnectedDelayed">
+  <span class="controller-caption">stimulusJS controller "step-two"</span>
+  <div class="controller-frame appear-animation" data-controller="step-two" data-action="connected->stepper#twoConnected connected:delayed->stepper#twoConnectedDelayed">
     <p>hi, I was sent here using <b><%= params[:one] %></b></p>
-    <%= form_with url: stepper_three_path, html: { "data-turbo-frame" => "step-three", "data-stepper-target" => "secondForm", "data-step-two-target" => "form" } do |f| %>
+    <span class="form-caption">secondForm</span>
+    <%= form_with url: stepper_three_path, html: { class: "form-frame", "data-turbo-frame" => "step-three", "data-stepper-target" => "secondForm", "data-step-two-target" => "form" } do |f| %>
       <%= f.hidden_field :one, value: params[:one] %>
       <%= f.radio_button :two, "cool", checked: params[:one] == "turbo", "data-action" => "step-two#submit" %>
       <%= f.label :two_cool, 'cool' %>
