@@ -8,7 +8,7 @@
       <%= f.radio_button :two, "not cool", checked: params[:one] == "ajax", "data-action" => "step-two#submit" %>
       <%= f.label :two_not_cool, 'not cool' %>
     <% end %>
-    <p class="border-box info" data-stepper-target="twoConnected">Stepper will try to color this red when receiving step-twos <b>connected</b><p>
-    <p class="border-box info" data-stepper-target="twoConnectedDelayed">Stepper will try to color this red when receiving step-twos <b>connected:delayed</b><p>
+    <p class="border-box" data-stepper-target="twoConnected">Stepper will try to color this blue when receiving <b>connected</b> by step-two<p>
+    <p class="border-box" data-stepper-target="twoConnectedDelayed">Stepper will try to color this blue when receiving <b>connected:delayed</b> by step-two<p>
   </div>
 </turbo-frame>

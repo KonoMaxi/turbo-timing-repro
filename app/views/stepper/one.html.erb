@@ -6,7 +6,7 @@
         <%= f.text_field :one, value: "turbo" %>
         <%= f.submit "submit turbo", "data-action" => "turbo:submit-end->stepper#oneTurbo" %>
       <% end %>
-      <p class="border-box info hidden">I could <span class="hidden" data-stepper-target="turboInfo">NOT </span>see form two, when <b>turbo:submit-end</b> fired<p>
+      <p class="border-box info hidden">stepperContoller could <span class="hidden" data-stepper-target="turboInfo"><b>NOT</b> </span>see form two, when <b>turbo:submit-end</b> fired<p>
       <p class="border-box warn hidden" data-stepper-target="turboWarning"><b>oneTurboSubmitted</b> submitted secondForm before it was replaced!<br/> Very inconvenient and unexpected behaviour<p>
     </div>
 

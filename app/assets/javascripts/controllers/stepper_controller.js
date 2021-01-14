@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import Rails from 'https://cdn.skypack.dev/@rails/ujs'
 
 export default class extends Controller {
-  static targets = [ "firstFormTurbo", "firstFormAjax", "secondForm", "turboInfo", "turboWarning", "stepTwoInfo", "twoConnectedDelayed", "twoConnectedDelayed" ]
+  static targets = [ "firstFormTurbo", "firstFormAjax", "secondForm", "turboInfo", "turboWarning", "stepTwoInfo", "twoConnected", "twoConnectedDelayed" ]
 
   connect() {
     console.log("stepper connected")
@@ -47,10 +47,10 @@ export default class extends Controller {
 
   twoConnected () {
     console.log("stepper received 'connected'")
-    
+    this.twoConnectedTarget.classList.add("info")    
   }
   twoConnectedDelayed () {
     console.log("stepper received 'connected:delayed'")
-
+    this.twoConnectedDelayedTarget.classList.add("info")
   }
 }

@@ -4,11 +4,14 @@
   <button data-action="stepper#submitTurboForm">trigger Turbo form via Rails.fire()</button>
   <button data-action="stepper#submitAjaxForm">trigger Ajax form via Rails.fire()</button>
 
+  <h2>Step 1</h2>
   <turbo-frame id="step-one" src="<%= stepper_one_path %>"></turbo-frame>
 
+  <h2>Step 2</h2>
   <p>form two is just a few radio-buttons and should submit automatically</p>
   <turbo-frame id="step-two"></turbo-frame>
 
+  <h2>Step 3 - The result</h2>
   <turbo-frame id="step-three"></turbo-frame>
 
   <hr>
