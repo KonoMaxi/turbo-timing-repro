@@ -77,6 +77,11 @@ turbo-frame {
   animation-duration: 0.5s;
 }
 
+.highlighted-text {
+  background-color: blue;
+  color: white;
+}
+
 @keyframes appear {
   33%   {background-color:lightyellow; transform: scale(1.05);}
   660%   {background-color:lightyellow; transform: scale(0.95);}

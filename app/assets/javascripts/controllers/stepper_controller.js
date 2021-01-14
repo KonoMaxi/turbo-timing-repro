@@ -47,10 +47,10 @@ export default class extends Controller {
 
   twoConnected () {
     console.log("stepper received 'connected'")
-    this.twoConnectedTarget.classList.add("info")    
+    this.twoConnectedTarget.classList.add("highlighted-text")    
   }
   twoConnectedDelayed () {
     console.log("stepper received 'connected:delayed'")
-    this.twoConnectedDelayedTarget.classList.add("info")
+    this.twoConnectedDelayedTarget.classList.add("highlighted-text")
   }
 }
