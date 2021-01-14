@@ -1,0 +1,18 @@
+<div data-controller="stepper">
+  <h1>Turbo Timing Demo</h1>
+  <p>Turbo's Timing seems to be a bit counter intuitive. I tried to build a stepper using the new turbo-frames (in a way i deemed correct/smart)</p>
+  <button data-action="stepper#submitTurboForm">trigger Turbo form via Rails.fire()</button>
+  <button data-action="stepper#submitAjaxForm">trigger Ajax form via Rails.fire()</button>
+
+  <turbo-frame id="step-one" src="<%= stepper_one_path %>"></turbo-frame>
+
+  <p>form two is just a few radio-buttons and should submit automatically</p>
+  <turbo-frame id="step-two"></turbo-frame>
+
+  <turbo-frame id="step-three"></turbo-frame>
+
+  <hr>
+  <h2>Other remarks</h2>
+  <p data-controller="convention-broken">Somehow the naming conventions are broken when using without webpack</p>
+  <p data-controller="step-two">If I don't use the "step-two" controller in the index page it somehow won't connect in the ajaxed(/turboed) frames</p>
+</div>
