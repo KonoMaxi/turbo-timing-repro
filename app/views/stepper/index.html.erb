@@ -5,23 +5,23 @@
     <div style="margin: 0 30px 0 30px">
       <p>Turbo's Timing seems to be a bit counter intuitive. I tried to build a stepper using the new turbo-frames (in a way i deemed correct/smart)</p>
       <span>Steps to reproduce - important is what happens (or what doesn't happen) to the output in step 3</span>
-      <ol>
+      <!-- <ol>
         <li>submit ajax form</li>
         <li>submit turbo form</li>
         <li>step 3 shows ajax output</li>
       </ol>
-      <span>- or -</span>
+      <span>- or -</span> -->
       <ol>
         <li>submit turbo form</li>
         <li>submit turbo form</li>
         <li>step 3 is only filled on second submit</li>
       </ol>
     </div>
-    <div class="border-box">
+    <!-- <div class="border-box">
       <p>click these buttons for programmatic submit</p>
       <button data-action="stepper#submitTurboForm">trigger Turbo form via Rails.fire()</button>
       <button data-action="stepper#submitAjaxForm">trigger Ajax form via Rails.fire()</button>
-    </div>
+    </div> -->
   </div>
 
   <h2>Step 1</h2>
@@ -32,11 +32,15 @@
   <h2>Step 2</h2>
   <p>Form two is just a few radio-buttons and should submit automatically<br/>It has a stimulus controller attached, which dispatcher a <b>connected</b> event. Somehow the surrounding <b>stepperController</b> will never receive it.</p>
   <span class="turboframe-caption">turbo-frame step-two</span>
-  <turbo-frame id="step-two"></turbo-frame>
+  <turbo-frame id="step-two">
+    <h2 style="color: red">Initial Content</h2>
+  </turbo-frame>
 
   <h2>Step 3 - The result</h2>
   <span class="turboframe-caption">turbo-frame step-three</span>
-  <turbo-frame id="step-three"></turbo-frame>
+  <turbo-frame id="step-three">
+    <h2 style="color: red">Initial Content</h2>
+  </turbo-frame>
 
 </div>
 <hr>
